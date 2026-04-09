@@ -27,26 +27,26 @@
   transform: scale(1.05); /* Makes the button grow slightly */
 } 
 /* This creates the "Fade In" movement */
-@keyframes fadeInUp {
+@keyframes spinaround {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: rotate(0deg) scale(0);
+      opacity: 0;
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: rotate(360deg) scale(1);
+      opacity: 1;
   }
 }
 
 /* This applies the animation to your elements */
 h1, p, img, .my-button {
-  animation: fadeInUp 1s ease-out forwards;
+  animation: spinaround 1.5s ease-out forwards;
 }
 
 /* This adds a slight delay so they pop up one by one */
-p { animation-delay: 0.2s; }
-img { animation-delay: 0.4s; }
-.my-button { animation-delay: 0.6s; }            
+p { animation-delay: 0.5s; }
+img { animation-delay: 1s; }
+.my-button { animation-delay: 1.5s; }            
 </style>
 </head>
     <body>
