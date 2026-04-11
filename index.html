@@ -4,49 +4,36 @@
     <title>Annie's Website</title>
         <style>
   body {
-    background-color: lightblue;
-    font-family: sans-serif;
-    text-align: center;
-  }
-  img { margin-top: 20px; border-radius: 10px; } 
-   .my-button {
-  background-color: purple; /* Dark color */
-  color: black;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s; /* This makes the color change smooth */
-.my-button:hover {
-  background-color: purple; /* Lighter color when mouse is over it */
-  transform: scale(1.05); /* Makes the button grow slightly */
-} 
-/* This creates the "Fade In" movement */
-@keyframes spinaround {
-  from {
-    transform: rotate(0deg) scale(0);
-      opacity: 0;
-  }
-  to {
-    transform: rotate(360deg) scale(1);
-      opacity: 1;
-  }
-}
+ <body>
+    <div id="choice-screen" class="glass-card">
+        <h1>Welcome</h1>
+        <p>Before we proceed, are you:</p>
+        <button class="my-button" onclick="showOracle('Male')">Male</button>
+        <button class="my-button" onclick="showOracle('Female')">Female</button>
+    </div>
 
-/* This applies the animation to your elements */
-h1, p, img, .my-button {
-  animation: spinaround 1.5s ease-out forwards;
-}
+    <div id="oracle-screen" class="glass-card" style="display: none;">
+        <h1 id="greeting">The Oracle</h1>
+        <p>shit gets hard sometimes but we harden up...</p>
+        
+        <img src="22.jpg.jpg" alt="My Photo" width="250">
+        
+        <br><br>
+        <br>
+        <a href="https://wa.me/256747783190" class="my-button">Talk to me</a>
+    </div>
 
-/* This adds a slight delay so they pop up one by one */
-p { animation-delay: 0.5s; }
-img { animation-delay: 1s; }
-.my-button { animation-delay: 1.5s; }            
-</style>
-</head>
+    <script>
+        function showOracle(gender) {
+            // Hide the choice screen
+            document.getElementById('choice-screen').style.display = 'none';
+            // Show the oracle screen
+            document.getElementById('oracle-screen').style.display = 'block';
+            // Change the title based on the choice
+            document.getElementById('greeting').innerText = "Welcome, " + gender;
+        }
+    </script>
+</body>
     <body>
 
     <h1> The Oracle</h1>
