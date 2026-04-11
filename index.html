@@ -2,9 +2,69 @@
 <html>
 <head>
     <title>Annie's Website</title>
-</head>
+    <style>
+        /* 1. THE LOOKS (CSS) */
+        body {
+            background-color: lightblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* The Glass Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+            animation: spinaround 1.2s ease-out forwards;
+        }
+
+        /* The Spin Animation */
+        @keyframes spinaround {
+            from { transform: rotate(0deg) scale(0); opacity: 0; }
+            to { transform: rotate(360deg) scale(1); opacity: 1; }
+        }
+
+        /* Purple Button Styling */
+        .my-button {
+            background-color: purple;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .my-button:hover {
+            background-color: darkviolet;
+            transform: scale(1.1);
+        }
+
+        img {
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
     </style>
-        <body>
+</head>
+<body>
+
     <div id="choice-screen" class="glass-card">
         <h1>Welcome</h1>
         <p>Before we proceed, are you:</p>
@@ -14,34 +74,27 @@
 
     <div id="oracle-screen" class="glass-card" style="display: none;">
         <h1 id="greeting">The Oracle</h1>
-        <p>shit gets hard sometimes but we harden up...</p>
+        <p>Shit gets hard sometimes but we harden up, wake up everyday to get the shit done and in the right place.</p>
         
-        <img src="22.jpg.jpg" alt="My Photo" width="250">
+        <img src="22.jpg.jpg" alt="My Photo" width="280">
         
-        <br><br>
-        <br>
+        <div style="margin: 20px 0;">
+            <p style="font-style: italic; font-size: 14px;">(Music Player Loading...)</p>
+        </div>
+
         <a href="https://wa.me/256747783190" class="my-button">Talk to me</a>
     </div>
 
     <script>
         function showOracle(gender) {
-            // Hide the choice screen
+            // Hide choice, show Oracle
             document.getElementById('choice-screen').style.display = 'none';
-            // Show the oracle screen
             document.getElementById('oracle-screen').style.display = 'block';
-            // Change the title based on the choice
+            
+            // Personalize the greeting
             document.getElementById('greeting').innerText = "Welcome, " + gender;
         }
-
-    <h1> The Oracle</h1>
-    <p>shit gets hard sometimes but we harden up, wake up everyday to get the shit done and in the right place.
-        and as a boy child, or a man. youo just have to figure out shit and make it to the end of the tunnel 
-        because we have got alot of people watching out for our fall or rise. So just know we hve to make no matter what.!</p>
-    
-    <img src="22.jpg.jpg" alt="My Photo" width="250">
-    
-    <br>
-    <a href="https://wa.me/256747783190" class="my-button"> Talk to me </a>
+    </script>
 
 </body>
 </html>
